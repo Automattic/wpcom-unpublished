@@ -1,0 +1,38 @@
+{
+  "name": "wpcom-unpublished",
+  "description": "WPCOM extension for unpublished endpoints of the WordPress REST-API",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Automattic, Inc.",
+  "contributors": [
+    "Damian Suarez <rdsuarez@gmail.com>"
+  ],
+  "keywords": [
+    "wordpress",
+    "rest-api",
+    "rest",
+    "api",
+    "unpublished",
+    "wpcom"
+  ],
+  "repository": "git@github.com:Automattic/wpcom-unpublished.git",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "~2.1.0",
+    "inherits": "2.0.1",
+    "qs": "^4.0.0",
+    "fs": "0.0.2",
+    "json-loader": "0.5.1",
+	"wpcom": "4.8.1",
+    "wpcom-oauth-cors": "^1.0.0",
+    "wpcom-xhr-request": "^0.3.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "mocha": "^2.2.5",
+    "strip-loader": "^0.1.0",
+    "webpack": "^1.12.1",
+    "dox": "^0.7.1",
+    "wpcom-proxy-request": "1.0.4"
+  }
+}
