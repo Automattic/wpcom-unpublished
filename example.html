@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WPCOMUnpublished example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://wzrd.in/standalone/wpcom-proxy-request@1.0.x"></script>
+		<script src="dist/wpcom-unpublished.js"></script>
+	</head>
+
+	<body>
+		<script>
+			// wpcom instance
+			var wpcom = WPCOMUnpublished( wpcomProxyRequest );
+
+			// Start the proxy
+			wpcom.request({
+				metaAPI: { accessAllUsersBlogs: true }
+			}, function(err) {
+			if (err) throw err;
+				console.log('proxy now running in "access all user\'s blogs" mode');
+			});
+
+			// get private `me` information
+			wpcom
+			.me()
+			.get( function( err, data ) {
+				if ( err ) throw err;
+				console.log( `-> data -> `, data );
+			} );
+		</script>
+	</body>
+</html>
