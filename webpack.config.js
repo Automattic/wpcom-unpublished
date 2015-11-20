@@ -1,11 +1,17 @@
 module.exports = {
 	entry: __dirname + '/index.js',
+
+	node: {
+	  fs: 'empty'
+	},
+
 	output: {
 		path: __dirname + '/dist',
 		filename: 'wpcom-unpublished.js',
 		libraryTarget: 'var',
 		library: 'WPCOMUnpublished'
 	},
+
 	module: {
 		loaders: [
 			{
@@ -14,8 +20,10 @@ module.exports = {
 			}
 		]
 	},
+
 	resolve: {
 		extensions: ['', '.js']
 	},
+
 	devtool: 'sourcemap'
 };

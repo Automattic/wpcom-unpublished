@@ -21,7 +21,6 @@
     "debug": "~2.1.0",
     "inherits": "2.0.1",
     "qs": "^4.0.0",
-    "fs": "0.0.2",
     "json-loader": "0.5.1",
 	"wpcom": "4.8.1",
     "wpcom-oauth-cors": "^1.0.0",
