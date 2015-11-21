@@ -61,4 +61,11 @@ build-doc:
 	git add docs/ -v
 	git commit -m "docs: re-built"
 
-.PHONY: standalone install clean distclean doc
+commit-dist:
+	make clean;
+	make;
+	make babelify;
+	git add dist/ -v
+	git commit -m "re-build dist/"
+
+.PHONY: standalone install clean distclean doc commit-dist
