@@ -5,9 +5,23 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<script src="http://wzrd.in/standalone/wpcom-proxy-request@1.0.x"></script>
 		<script src="dist/wpcom-unpublished.js"></script>
+		<style>
+			body {
+				font-family: sans-serif;
+				color: #666;
+				padding: 10px;
+			}
+
+			pre {
+				color: #484;
+				font-size: 12px;
+				word-wrap: break-word;
+			}
+		</style>
 	</head>
 
 	<body>
+		<p>Getting current user information ...</p>
 		<script>
 			// wpcom instance
 			var wpcom = WPCOMUnpublished( wpcomProxyRequest );
@@ -25,6 +39,11 @@
 			.me()
 			.get( function( err, data ) {
 				if ( err ) throw err;
+
+				var d = document.createElement( 'pre' );
+				d.innerHTML = JSON.stringify( data, null, 2 );
+				document.body.appendChild( d );
+
 				console.log( `-> data -> `, data );
 			} );
 		</script>
