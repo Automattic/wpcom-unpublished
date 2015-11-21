@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var _Site_ = require('wpcom/dist/lib/site');
+var _Site_ = require('wpcom/lib/site');
 var Post = require('./site.post');
 var SiteWordAds = require('./site.wordads');
 var inherits = require('inherits');
