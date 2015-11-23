@@ -18,13 +18,11 @@
   "repository": "git@github.com:Automattic/wpcom-unpublished.git",
   "license": "MIT",
   "dependencies": {
-    "debug": "~2.1.0",
+    "debug": "~2.2.0",
     "inherits": "2.0.1",
     "qs": "^4.0.0",
     "json-loader": "0.5.1",
-    "wpcom": "4.6.1",
-    "wpcom-oauth-cors": "^1.0.0",
-    "wpcom-xhr-request": "^0.3.3"
+    "wpcom": "4.6.4"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -35,7 +33,6 @@
     "mocha": "^2.2.5",
     "strip-loader": "^0.1.0",
     "webpack": "^1.12.1",
-    "dox": "^0.7.1",
-    "wpcom-proxy-request": "1.0.5"
+    "dox": "^0.7.1"
   }
 }
