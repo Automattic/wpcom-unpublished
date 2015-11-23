@@ -6,14 +6,14 @@ WPCOM extension that uses unpublished endpoints of the WordPress REST-API.
 ## How to use
 
 ```js
-// Requere modules
+// Require modules
 var wpcomUnpublished = require( 'wpcom-unpublished' );
 var proxy = require( 'wpcom-proxy-request' );
 
 // Create wpcom instance
 var wpcom = wpcomUnpublished( proxy );
 
-// Get settings of the current user
+// Get settings for the current user
 wpcom
 .me()
 .settings()
