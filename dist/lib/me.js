@@ -16,11 +16,11 @@ var inherits = require('inherits');
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `Me` instance
  *    var me = wpcom.me();
  *
@@ -46,11 +46,11 @@ inherits(Me, _Me_);
  *    // Get billing history for the current user
  *    wpcom
  *    .me()
- *    .billingHistory(function(err, data) {
+ *    .billingHistory( function( err, data ) {
  *      // billing history data object
- *    });
+ *    } );
  *
- * @param {Object} [query]
+ * @param {Object} [query] - query object parameter
  * @param {Function} [fn]
  * @public
  */
@@ -66,11 +66,11 @@ Me.prototype.billingHistory = function (query, fn) {
  *    // Get posts list
  *    wpcom
  *    .me()
- *    .postsList(function(err, data) {
+ *    .postsList( function( err, data ) {
  *      // posts list data object
- *    });
+ *    } );
  *
- * @param {Object} [query]
+ * @param {Object} [query] - query object parameter
  * @param {Function} [fn]
  * @public
  */

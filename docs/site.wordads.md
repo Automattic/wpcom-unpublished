@@ -12,14 +12,20 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `SiteWordAds` instance
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds();
 ```
 
@@ -30,9 +36,12 @@
   *Example:*
 ```js
  // Create a SiteWordAdsSettings instance
- 
+```
+
+  
+```js
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .settings();
 ```
@@ -44,9 +53,12 @@
   *Example:*
 ```js
  // Create a SiteWordAdsEarnings instance
- 
+```
+
+  
+```js
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .earnings();
 ```
@@ -58,9 +70,12 @@
   *Example:*
 ```js
  // Create a SiteWordAdsTOS instance
- 
+```
+
+  
+```js
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .tos();
 ```

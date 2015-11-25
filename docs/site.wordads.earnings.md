@@ -8,14 +8,20 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `SiteWordAdsEarnings` instance
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .earnings();
 ```
@@ -28,11 +34,11 @@
 ```js
  // Get site earnings information
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .earnings()
- .get(function(err, data) {
+ .get( function( err, data ) {
    // `earnings` information object
- });
+ } );
 ```
 

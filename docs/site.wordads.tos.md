@@ -10,14 +10,20 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `SiteWordAdsTOS` instance
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .tos();
 ```
@@ -30,12 +36,12 @@
 ```js
  // Get site TOS information
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .tos()
- .get(function(err, data) {
+ .get( function( err, data ) {
    // `settings` information object
- });
+ } );
 ```
 
 ### SiteWordAdsTOS.update([query]:Object, body:Object, fn:Function)
@@ -46,12 +52,12 @@
 ```js
  // Update TOS
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .tos()
- .update({ tos: 'signed' }, function(err, data) {
+ .update( { tos: 'signed' }, function( err, data ) {
    // data settings information object
- });
+ } );
 ```
 
 ### SiteWordAdsTOS.sign([query]:Object, fn:Function)
@@ -62,11 +68,11 @@
 ```js
  // Sign TOS
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .tos()
- .sign(function(err, data) {
+ .sign( function( err, data ) {
    // data settings information object
- });
+ } );
 ```
 

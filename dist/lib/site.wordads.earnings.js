@@ -4,14 +4,14 @@
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `SiteWordAdsEarnings` instance
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds()
  *      .earnings();
  *
@@ -35,15 +35,15 @@ function SiteWordAdsEarnings(sid, wpcom) {
  * *Example:*
  *    // Get site earnings information
  *    wpcom
- *    .site('my-blog.wordpress.com')
+ *    .site( 'my-blog.wordpress.com' )
  *    .wordAds()
  *    .earnings()
- *    .get(function(err, data) {
+ *    .get( function( err, data ) {
  *      // `earnings` information object
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 

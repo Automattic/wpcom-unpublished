@@ -14,14 +14,14 @@ var SiteWordAdsTOS = require('./site.wordads.tos');
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `SiteWordAds` instance
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds();
  *
  * @constructor
@@ -43,9 +43,9 @@ function SiteWordAds(sid, wpcom) {
  *
  * *Example:*
  *    // Create a SiteWordAdsSettings instance
- *    
+ *
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds()
  *      .settings();
  *
@@ -62,9 +62,9 @@ SiteWordAds.prototype.settings = function () {
  *
  * *Example:*
  *    // Create a SiteWordAdsEarnings instance
- *    
+ *
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds()
  *      .earnings();
  *
@@ -81,9 +81,9 @@ SiteWordAds.prototype.earnings = function () {
  *
  * *Example:*
  *    // Create a SiteWordAdsTOS instance
- *    
+ *
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds()
  *      .tos();
  *

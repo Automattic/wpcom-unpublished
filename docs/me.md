@@ -14,11 +14,17 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `Me` instance
  var me = wpcom.me();
 ```
@@ -32,9 +38,9 @@
  // Get billing history for the current user
  wpcom
  .me()
- .billingHistory(function(err, data) {
+ .billingHistory( function( err, data ) {
    // billing history data object
- });
+ } );
 ```
 
 ### Me.postsList([query]:Object, [fn]:Function)
@@ -46,9 +52,9 @@
  // Get posts list
  wpcom
  .me()
- .postsList(function(err, data) {
+ .postsList( function( err, data ) {
    // posts list data object
- });
+ } );
 ```
 
 ### Me.settings()

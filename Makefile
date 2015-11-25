@@ -6,7 +6,7 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 BIN := $(THIS_DIR)/node_modules/.bin
 
 # Files
-JS_FILES := $(wildcard lib/*.js)
+JS_FILES := $(wildcard index.js lib/*.js)
 
 # applications
 NODE ?= node
@@ -44,6 +44,11 @@ node_modules: package.json
 	@NODE_ENV= $(NPM) install
 	@touch node_modules
 
+lint: node_modules/eslint node_modules/babel-eslint
+	@$(BIN)/eslint $(JS_FILES)
+
+eslint: lint
+
 docs/%:
 	$(eval SOURCE := $(addprefix lib/, $(notdir $@)))
 	$(eval OUTPUT := $(addsuffix .md, $(basename $@)))
@@ -61,10 +66,7 @@ build-doc:
 	git add docs/ -v
 	git commit -m "docs: re-built"
 
-commit-dist:
-	make clean;
-	make;
-	make babelify;
+commit-dist: clean standalone babelify
 	git add dist/ -v
 	git commit -m "re-build dist/"
 

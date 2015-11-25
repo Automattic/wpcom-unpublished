@@ -3,7 +3,7 @@
  *
  * @param {String} pid - post identifier
  * @param {String} sid - site identifier
- * @param {WPCOM} wpcom
+ * @param {WPCOM} wpcom - wpcom instance
  * @api public
  */
 
@@ -32,15 +32,15 @@ function Subscriber(pid, sid, wpcom) {
  * *Example:*
  *    Get subscriber status for the current user for the Post
  *    wpcom
- *    .site('en.blog.wordpress.com')
- *    .post(1234)
+ *    .site( 'en.blog.wordpress.com' )
+ *    .post( 1234 )
  *    .subscriber()
- *    .mine(function(err, data) {
+ *    .mine( function( err, data ) {
  *      // subscription data
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -58,15 +58,15 @@ Subscriber.prototype.state = Subscriber.prototype.mine;
  * *Example:*
  *    // Subscribe the current user to the post
  *    wpcom
- *    .site('en.blog.wordpress.com')
- *    .post(1234)
+ *    .site( 'en.blog.wordpress.com' )
+ *    .post( 1234 )
  *    .subscriber()
- *    .add(function(err, data) {
+ *    .add( function( err, data ) {
  *      // current user has been subscribed to post
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -81,14 +81,14 @@ Subscriber.prototype.add = function (query, fn) {
  * *Example:*
  *    // Unsubscribe current user to the post
  *    wpcom
- *    .site('en.blog.wordpress.com')
- *    .post(1234)
+ *    .site( 'en.blog.wordpress.com' )
+ *    .post( 1234 )
  *    .subscriber()
- *    .del(function(err, data) {
+ *    .del( function( err, data ) {
  *      // current user has been unsubscribed to post
- *    });
- 
- * @param {Function} fn
+ *    } );
+
+ * @param {Function} fn - callback function
  * @public
  */
 

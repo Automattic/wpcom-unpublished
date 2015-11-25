@@ -17,11 +17,11 @@ var inherits = require('inherits');
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `Site` instance
  *    var site = wpcom.site("my-blog.wordpress.com");
  *
@@ -36,8 +36,8 @@ function Site(id, wpcom) {
 }
 
 /*!
-* Inherits from _Site_ class
-*/
+ * Inherits from _Site_ class
+ */
 
 inherits(Site, _Site_);
 
@@ -47,19 +47,19 @@ inherits(Site, _Site_);
  * *Example:*
  *   // Get number post of pages
  *    wpcom
- *    .site('my-blog.wordpress.com')
- *    .postCounts('page', function(err, data) {
+ *    .site( 'my-blog.wordpress.com' )
+ *    .postCounts( 'page', function( err, data ) {
  *      // `counts` data object
- *    });
+ *    } );
  *
  * @param {String} type - post type
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
 Site.prototype.postCounts = function (type, query, fn) {
-  if ('function' == typeof query) {
+  if ('function' === typeof query) {
     fn = query;
     query = {};
   }
@@ -68,7 +68,6 @@ Site.prototype.postCounts = function (type, query, fn) {
   type = type || 'post';
 
   var path = '/sites/' + this._id + '/post-counts/' + type;
-
   return this.wpcom.req.get(path, query, fn);
 };
 
@@ -78,12 +77,12 @@ Site.prototype.postCounts = function (type, query, fn) {
  * *Example:*
  *    // Get all post types from WordPress blog
  *    wpcom
- *    .site('my-blog.wordpress.com')
- *    .postTypesList(function(err, data) {
+ *    .site( 'my-blog.wordpress.com' )
+ *    .postTypesList( function( err, data ) {
  *      // post types in data object
- *    });
+ *    } );
  *
- * @param {Object} [query]
+ * @param {Object} [query] - query object parameter
  * @param {Function} [fn]
  * @public
  */
@@ -98,12 +97,12 @@ Site.prototype.postTypesList = function (query, fn) {
  * *Example:*
  *    // Get primary domain
  *    wpcom
- *    .site('my-blog.wordpress.com')
- *    .primaryDomain(function(err, data) {
+ *    .site( 'my-blog.wordpress.com' )
+ *    .primaryDomain( function( err, data ) {
  *      // data.domain
- *    });
+ *    } );
  *
- * @param {Object} [query]
+ * @param {Object} [query] - query object parameter
  * @param {Function} [fn]
  * @public
  */
@@ -118,12 +117,12 @@ Site.prototype.primaryDomain = function (query, fn) {
  * *Example:*
  *    // Get plugins list of WordPress blog
  *    wpcom
- *    .site('my-blog.wordpress.com')
- *    .pluginsList(function(err, data) {
+ *    .site( 'my-blog.wordpress.com' )
+ *    .pluginsList( function( err, data ) {
  *      // data
- *    });
+ *    } );
  *
- * @param {Object} [query]
+ * @param {Object} [query] - query object parameter
  * @param {Function} [fn]
  * @public
  */
@@ -137,7 +136,7 @@ Site.prototype.pluginsList = function (query, fn) {
  *
  * *Example:*
  *    // Create a Post instance
- *    var post = wpcom.site("my-blog.wordpress.com").post(1234);
+ *    var post = wpcom.site("my-blog.wordpress.com").post( 1234 );
  *
  * @param {String|Number} id - post identifier
  * @public
@@ -152,9 +151,9 @@ Site.prototype.post = function (id) {
  *
  * *Example:*
  *    // Create a SiteWordAds instance
- *    
+ *
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds();
  *
  * @public
