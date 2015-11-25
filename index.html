@@ -1,51 +1,22 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<title>WPCOMUnpublished example</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<script src="http://wzrd.in/standalone/wpcom-proxy-request@1.0.x"></script>
-		<script src="wpcom-unpublished.js"></script>
-		<style>
-			body {
-				font-family: sans-serif;
-				color: #666;
-				padding: 10px;
-			}
-
-			pre {
-				color: #484;
-				font-size: 12px;
-				word-wrap: break-word;
-			}
-		</style>
-	</head>
-
-	<body>
-		<p>Getting current user information ...</p>
-		<script>
-			// wpcom instance
-			var wpcom = WPCOMUnpublished( wpcomProxyRequest );
-
-			// Start the proxy
-			wpcom.request({
-				metaAPI: { accessAllUsersBlogs: true }
-			}, function(err) {
-			if (err) throw err;
-				console.log('proxy now running in "access all user\'s blogs" mode');
-			});
-
-			// get private `me` information
-			wpcom
-			.me()
-			.get( function( err, data ) {
-				if ( err ) throw err;
-
-				var d = document.createElement( 'pre' );
-				d.innerHTML = JSON.stringify( data, null, 2 );
-				document.body.appendChild( d );
-
-				console.log( `-> data -> `, data );
-			} );
-		</script>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <title>wpcom-private.js testing app</title>
+  <link rel="stylesheet" href="mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="mocha.js"></script>
+  <script>
+    mocha.setup({
+      ui: 'bdd',
+      timeout: 5000
+    });
+  </script>
+  <script src="./testing-bundle.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
 </html>
