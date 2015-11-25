@@ -24,10 +24,10 @@ wpcom
 
 ## Run testing app
 
-1.	Install npm  dependencies `make install`
-2.	Add `127.0.0.1 calypso.localhost` to your local hosts file.
-3.	Execute `make run-test-app` from the root directory of the repository.
-4.	Open `calypso.localhost:3000` in your browser.
+1. Install npm dependencies `make install`
+2. Add `127.0.0.1 calypso.localhost` to your local hosts file.
+3. Execute `make run-test-app` from the root directory of the repository.
+4. Open `calypso.localhost:3000` in your browser.
 
 ### Links
 
