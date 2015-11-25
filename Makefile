@@ -7,6 +7,7 @@ BIN := $(THIS_DIR)/node_modules/.bin
 
 # Files
 JS_FILES := $(wildcard index.js lib/*.js test/*.js)
+JS_TESTING_FILES := $(wildcard test/test*.js)
 
 # applications
 NODE ?= node
@@ -81,13 +82,13 @@ commit-dist: clean standalone babelify
 	git commit -m "re-build dist/"
 
 # testing client app
-test-app:
+test-app: dist/test/testing-source.js
 	cp test/fixture.json dist/test/
 	cp test/config.json dist/test/
 	cp ./node_modules/mocha/mocha.* ./app
-	cat \
-		dist/test/test.wpcom.me.js \
-		> dist/test/testing-source.js
 	@$(WEBPACK) -p --config app/webpack.config.js
 
-.PHONY: standalone install clean distclean doc commit-dist test-app
+dist/test/testing-source.js: ${JS_TESTING_FILES}
+	cat > $@ $^
+
+.PHONY: standalone install clean distclean doc commit-dist test-app coco
