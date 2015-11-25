@@ -8,7 +8,7 @@ var root = '/me/settings/profile-links';
 /**
  * `ProfileLinks` constructor.
  *
- * @param {WPCOM} wpcom
+ * @param {WPCOM} wpcom - wpcom instance
  * @public
  */
 
@@ -29,12 +29,12 @@ function ProfileLinks(wpcom) {
  *    .me()
  *    .settings()
  *    .profileLinks()
- *    .get(function(err, data) {
+ *    .get( function( err, data ) {
  *      // profile links data
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -54,16 +54,16 @@ ProfileLinks.prototype.mine = ProfileLinks.prototype.get;
  *    .me()
  *    .settings()
  *    .profileLinks()
- *    .add({
+ *    .add( {
  *      title: "WordPress Blog",
  *      value: "en.blog.wordpress.com"
- *    }, function(err, data) {
+ *    }, function( err, data ) {
  *      // profile has been added
- *    });
+ *    } );
  *
  * @param {Array|Object} links - profile links
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -95,18 +95,18 @@ ProfileLinks.prototype.add = function (links, query, fn) {
  *    .me()
  *    .settings()
  *    .profileLinks()
- *    .del('httpen-blog-wordpress-com', function(err, data) {
+ *    .del( 'httpen-blog-wordpress-com', function( err, data ) {
  *      // profile has been deleted
- *    });
+ *    } );
  *
  * @param {String} slug
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
 ProfileLinks.prototype.del = function (slug, query, fn) {
-  if ('function' == typeof query) {
+  if ('function' === typeof query) {
     fn = query;
     query = {};
   }

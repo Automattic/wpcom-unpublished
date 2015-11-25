@@ -15,7 +15,7 @@ var inherits = require('inherits');
  * @constructor
  * @param {Number} id - post id
  * @param {Number|String} sid - site id
- * @param {WPCOM} wpcom
+ * @param {WPCOM} wpcom - wpcom instance
  * @public
  */
 
@@ -24,8 +24,8 @@ function Post(id, sid, wpcom) {
 }
 
 /*!
-* Inherits from _Post_ class
-*/
+ * Inherits from _Post_ class
+ */
 
 inherits(Post, _Post_);
 
@@ -35,14 +35,14 @@ inherits(Post, _Post_);
  * *Example:*
  *    // Get subscribers list for the post
  *    wpcom
- *    .site('en.blog.wordpress.com')
- *    .post(1234)
- *    .subscribers(function(err, data) {
+ *    .site( 'en.blog.wordpress.com' )
+ *    .post( 1234 )
+ *    .subscribers( function( err, data ) {
  *      // subscribers list data
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -56,7 +56,7 @@ Post.prototype.subscribers = function (query, fn) {
  *
  * *Example:*
  *    // Create a Subscriber instance of a post
- *    var post = wpcom.site('en.blog.wordpress.com').post(1234);
+ *    var post = wpcom.site( 'en.blog.wordpress.com' ).post( 1234 );
  *    var subs = post.subscriber();
  *
  * @public

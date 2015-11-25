@@ -4,14 +4,14 @@
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `SiteWordAdsTOS` instance
  *    var wordAds = wpcom
- *      .site('my-blog.wordpress.com')
+ *      .site( 'my-blog.wordpress.com' )
  *      .wordAds()
  *      .tos();
  *
@@ -35,15 +35,15 @@ function SiteWordAdsTOS(sid, wpcom) {
  * *Example:*
  *    // Get site TOS information
  *    wpcom
- *    .site('my-blog.wordpress.com')
+ *    .site( 'my-blog.wordpress.com' )
  *    .wordAds()
  *    .tos()
- *    .get(function(err, data) {
+ *    .get( function( err, data ) {
  *      // `settings` information object
- *    });
- 
- * @param {Object} [query]
- * @param {Function} fn
+ *    } );
+
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -57,16 +57,16 @@ SiteWordAdsTOS.prototype.get = function (query, fn) {
  * *Example:*
  *    // Update TOS
  *    wpcom
- *    .site('my-blog.wordpress.com')
+ *    .site( 'my-blog.wordpress.com' )
  *    .wordAds()
  *    .tos()
- *    .update({ tos: 'signed' }, function(err, data) {
+ *    .update( { tos: 'signed' }, function( err, data ) {
  *      // data settings information object
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Object} body
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Object} body - body object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
@@ -81,15 +81,15 @@ SiteWordAdsTOS.prototype.update = function (query, body, fn) {
  * *Example:*
  *    // Sign TOS
  *    wpcom
- *    .site('my-blog.wordpress.com')
+ *    .site( 'my-blog.wordpress.com' )
  *    .wordAds()
  *    .tos()
- *    .sign(function(err, data) {
+ *    .sign( function( err, data ) {
  *      // data settings information object
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 

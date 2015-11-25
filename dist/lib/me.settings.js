@@ -12,11 +12,11 @@ var ProfileLinks = require('./me.settings.profile-links');
  *
  * *Example:*
  *    // Require `wpcom-unpublished` library
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    
+ *    var wpcomUnpublished = require( 'wpcom-unpublished' );
+ *
  *    // Create a `wpcomUnpublished` instance
  *    var wpcom = wpcomUnpublished();
- *    
+ *
  *    // Create a `MeSettings` instance
  *    var settings = wpcom.me().settings();
  *
@@ -41,12 +41,12 @@ function MeSettings(wpcom) {
  *    wpcom
  *    .me()
  *    .settings()
- *    .get(function(err, data) {
+ *    .get( function( err, data ) {
  *      // user settings data object
- *    });
+ *    } );
  *
- * @param {Object} [query]
- * @param {Function} fn
+ * @param {Object} [query] - query object parameter
+ * @param {Function} fn - callback function
  * @public
  */
 
