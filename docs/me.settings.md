@@ -11,11 +11,17 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `MeSettings` instance
  var settings = wpcom.me().settings();
 ```
@@ -30,9 +36,9 @@
  wpcom
  .me()
  .settings()
- .get(function(err, data) {
+ .get( function( err, data ) {
    // user settings data object
- });
+ } );
 ```
 
 ### MeSettings.profileLinks()

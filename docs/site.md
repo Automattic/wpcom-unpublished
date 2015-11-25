@@ -17,11 +17,17 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `Site` instance
  var site = wpcom.site("my-blog.wordpress.com");
 ```
@@ -34,10 +40,10 @@
 ```js
 // Get number post of pages
  wpcom
- .site('my-blog.wordpress.com')
- .postCounts('page', function(err, data) {
+ .site( 'my-blog.wordpress.com' )
+ .postCounts( 'page', function( err, data ) {
    // `counts` data object
- });
+ } );
 ```
 
 ### Site.postTypesList([query]:Object, [fn]:Function)
@@ -48,10 +54,10 @@
 ```js
  // Get all post types from WordPress blog
  wpcom
- .site('my-blog.wordpress.com')
- .postTypesList(function(err, data) {
+ .site( 'my-blog.wordpress.com' )
+ .postTypesList( function( err, data ) {
    // post types in data object
- });
+ } );
 ```
 
 ### Site.primaryDomain([query]:Object, [fn]:Function)
@@ -62,10 +68,10 @@
 ```js
  // Get primary domain
  wpcom
- .site('my-blog.wordpress.com')
- .primaryDomain(function(err, data) {
+ .site( 'my-blog.wordpress.com' )
+ .primaryDomain( function( err, data ) {
    // data.domain
- });
+ } );
 ```
 
 ### Site.pluginsList([query]:Object, [fn]:Function)
@@ -76,10 +82,10 @@
 ```js
  // Get plugins list of WordPress blog
  wpcom
- .site('my-blog.wordpress.com')
- .pluginsList(function(err, data) {
+ .site( 'my-blog.wordpress.com' )
+ .pluginsList( function( err, data ) {
    // data
- });
+ } );
 ```
 
 ### Site.post(id:String|Number)
@@ -89,7 +95,7 @@
   *Example:*
 ```js
  // Create a Post instance
- var post = wpcom.site("my-blog.wordpress.com").post(1234);
+ var post = wpcom.site("my-blog.wordpress.com").post( 1234 );
 ```
 
 ### Site.wordAds()
@@ -99,9 +105,12 @@
   *Example:*
 ```js
  // Create a SiteWordAds instance
- 
+```
+
+  
+```js
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds();
 ```
 

@@ -9,14 +9,20 @@
   *Example:*
 ```js
  // Require `wpcom-unpublished` library
- var wpcomUnpublished = require('wpcom-unpublished');
- 
+ var wpcomUnpublished = require( 'wpcom-unpublished' );
+```
+
+  
+```js
  // Create a `wpcomUnpublished` instance
  var wpcom = wpcomUnpublished();
- 
+```
+
+  
+```js
  // Create a `SiteWordAdsSettings` instance
  var wordAds = wpcom
-   .site('my-blog.wordpress.com')
+   .site( 'my-blog.wordpress.com' )
    .wordAds()
    .settings();
 ```
@@ -29,12 +35,12 @@
 ```js
  // Get site settings information
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .settings()
- .get(function(err, data) {
+ .get( function( err, data ) {
    // `settings` information object
- });
+ } );
 ```
 
 ### SiteWordAdsSettings.update([query]:Object, body:Object, fn:Function)
@@ -44,14 +50,17 @@
   *Example:*
 ```js
  var settings = {}; // your settings here
- 
+```
+
+  
+```js
  // Get site settings information
  wpcom
- .site('my-blog.wordpress.com')
+ .site( 'my-blog.wordpress.com' )
  .wordAds()
  .settings()
- .update(settings, function(err, data) {
+ .update( settings, function( err, data ) {
    // data settings information object
- });
+ } );
 ```
 

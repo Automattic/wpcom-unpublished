@@ -18,9 +18,9 @@
  .me()
  .settings()
  .profileLinks()
- .get(function(err, data) {
+ .get( function( err, data ) {
    // profile links data
- });
+ } );
 ```
 
 ### ProfileLinks.add(links:Array|Object, [query]:Object, fn:Function)
@@ -34,12 +34,12 @@
  .me()
  .settings()
  .profileLinks()
- .add({
+ .add( {
    title: "WordPress Blog",
    value: "en.blog.wordpress.com"
- }, function(err, data) {
+ }, function( err, data ) {
    // profile has been added
- });
+ } );
 ```
 
 ### ProfileLinks.del(slug:String, [query]:Object, fn:Function)
@@ -53,8 +53,8 @@
  .me()
  .settings()
  .profileLinks()
- .del('httpen-blog-wordpress-com', function(err, data) {
+ .del( 'httpen-blog-wordpress-com', function( err, data ) {
    // profile has been deleted
- });
+ } );
 ```
 
