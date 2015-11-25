@@ -5,6 +5,9 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 # BIN directory
 BIN := $(THIS_DIR)/node_modules/.bin
 
+# Testing WEB APP port
+PORT := 3001
+
 # Files
 JS_FILES := $(wildcard index.js lib/*.js test/*.js)
 JS_TESTING_FILES := $(wildcard test/test*.js)
@@ -85,10 +88,15 @@ commit-dist: clean standalone babelify
 test-app: dist/test/testing-source.js
 	cp test/fixture.json dist/test/
 	cp test/config.json dist/test/
+	cp test/util.js dist/test/
 	cp ./node_modules/mocha/mocha.* ./app
 	@$(WEBPACK) -p --config app/webpack.config.js
 
+run-test-app: babelify test-app
+	cd app/; serve -p $(PORT)
+
 dist/test/testing-source.js: ${JS_TESTING_FILES}
+	mkdir -p dist/test/
 	cat > $@ $^
 
 .PHONY: standalone install clean distclean doc commit-dist test-app coco
