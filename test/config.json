@@ -1,0 +1,19 @@
+{
+	"production": {
+		"oauth": {
+			"client_id": "43413",
+			"options": {
+				"scope": "global"
+			}
+		}
+	},
+
+	"development": {
+		"oauth": {
+			"client_id": "43472",
+			"options": {
+				"scope": "global"
+			}
+		}
+	}
+}
