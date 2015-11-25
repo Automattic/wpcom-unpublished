@@ -3,48 +3,48 @@
  * External dependencies
  */
 
-var WPCOM = require('wpcom');
-var Me = require('./lib/me');
-var Site = require('./lib/site');
-var inherits = require('inherits');
+var WPCOM = require( 'wpcom' );
+var Me = require( './lib/me' );
+var Site = require( './lib/site' );
+var inherits = require( 'inherits' );
 
 /**
- * Creates a `wpcomUnpublished` instance
+ * Creates a `WPCOMUnpublished` instance
  *
  * Example
- *    // Create wpcomUnpublished instance
- *    var wpcomUnpublished = require('wpcom-unpublished');
+ *    // Create WPCOMUnpublished instance
+ *    var WPCOMUnpublished = require( 'wpcom-unpublished' );
  *    var wpcom = WPCOM();
  *
  * Example
- *    // Create wpcomUnpublished instance passing a token
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    var wpcom = WPCOM('<your-token>');
+ *    // Create WPCOMUnpublished instance passing a token
+ *    var WPCOMUnpublished = require( 'wpcom-unpublished' );
+ *    var wpcom = WPCOM( '<your-token>' );
  *
  * Example
- *    // Create wpcomUnpublished instance passing request handler
- *    var wpcomUnpublished = require('wpcom-unpublished');
- *    var proxy = require('wpcom-proxy-request');
- *    var wpcom = WPCOM(proxy);
+ *    // Create WPCOMUnpublished instance passing request handler
+ *    var WPCOMUnpublished = require( 'wpcom-unpublished' );
+ *    var proxy = require( 'wpcom-proxy-request' );
+ *    var wpcom = WPCOM( proxy );
  *
  * @param {String} [token] - OAuth API access token
  * @param {Function} [reqHandler] - function Request Handler
  * @public
  */
 
-function wpcomUnpublished(token, reqHandler) {
-  if (!(this instanceof wpcomUnpublished)) {
-    return new wpcomUnpublished(token, reqHandler);
-  }
+function WPCOMUnpublished( token, reqHandler ) {
+	if ( ! ( this instanceof WPCOMUnpublished ) ) {
+		return new WPCOMUnpublished( token, reqHandler );
+	}
 
-  WPCOM.call(this, token, reqHandler);
+	WPCOM.call( this, token, reqHandler );
 }
 
 /*!
  * Extend from WPCOM
  */
 
-inherits(wpcomUnpublished, WPCOM);
+inherits( WPCOMUnpublished, WPCOM );
 
 /**
  * Create and return a `Me` instance
@@ -56,8 +56,8 @@ inherits(wpcomUnpublished, WPCOM);
  * @public
  */
 
-wpcomUnpublished.prototype.me = function () {
-  return new Me(this);
+WPCOMUnpublished.prototype.me = function() {
+	return new Me( this );
 };
 
 /**
@@ -71,12 +71,12 @@ wpcomUnpublished.prototype.me = function () {
  * @public
  */
 
-wpcomUnpublished.prototype.site = function (id) {
-  return new Site(id, this);
+WPCOMUnpublished.prototype.site = function( id ) {
+	return new Site( id, this );
 };
 
 /*!
-* Expose `wpcomUnpublished`
-*/
+ * Expose `WPCOMUnpublished`
+ */
 
-module.exports = wpcomUnpublished;
+module.exports = WPCOMUnpublished;
