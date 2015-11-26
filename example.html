@@ -44,7 +44,20 @@
 				d.innerHTML = JSON.stringify( data, null, 2 );
 				document.body.appendChild( d );
 
-				console.log( `-> data -> `, data );
+				console.log( 'data: %o', data );
+			} );
+
+			// get private `me` information
+			wpcom
+			.site( 'es.blog.wordpress.com' )
+			.get( function( err, data ) {
+				if ( err ) throw err;
+
+				var d = document.createElement( 'pre' );
+				d.innerHTML = JSON.stringify( data, null, 2 );
+				document.body.appendChild( d );
+
+				console.log( 'data: %o', data );
 			} );
 		</script>
 	</body>
