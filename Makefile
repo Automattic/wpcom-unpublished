@@ -37,8 +37,14 @@ dist/wpcom.js: *.js dist lib/*.js
 	@$(WEBPACK) -p --config webpack.config.js
 
 babelify: dist dist/lib
-	@$(BABEL) index.js --out-file dist/index.js
-	@$(BABEL) lib --out-dir dist/lib
+	@$(BABEL) \
+		index.js \
+			--optional runtime \
+			--out-file dist/index.js
+	@$(BABEL) \
+		lib \
+			--optional runtime \
+			--out-dir dist/lib
 
 node_modules: package.json
 	@NODE_ENV= $(NPM) install
