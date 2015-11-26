@@ -1,4 +1,11 @@
 
+1.0.7 / 2015-11-26
+==================
+
+ * re-build dist/
+ * update wpcom/lib paths to parent class
+ * pkg: update `wpcom` to `4.8.2`
+
 1.0.5 / 2015-11-23
 ==================
 
