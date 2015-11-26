@@ -2,7 +2,7 @@ module.exports = {
 	entry: __dirname + '/index.js',
 
 	node: {
-	  fs: 'empty'
+		fs: 'empty'
 	},
 
 	output: {
@@ -16,7 +16,12 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/,
-				loader: 'babel-loader'
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+					cacheDirectory: true,
+					optional: [ 'runtime' ]
+				}
 			}
 		]
 	},
