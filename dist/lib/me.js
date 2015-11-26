@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-var _Me_ = require('wpcom/lib/me');
+var _Me_ = require('wpcom/dist/lib/me');
 var MeSettings = require('./me.settings');
 var inherits = require('inherits');
 
