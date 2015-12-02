@@ -6,7 +6,7 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 BIN := $(THIS_DIR)/node_modules/.bin
 
 # Files
-JS_FILES := $(wildcard index.js lib/*.js)
+JS_FILES := $(wildcard index.js lib/*.js test/*.js)
 
 # applications
 NODE ?= node
@@ -45,6 +45,10 @@ babelify: dist dist/lib
 		lib \
 			--optional runtime \
 			--out-dir dist/lib
+	@$(BABEL) \
+		test \
+			--optional runtime \
+			--out-dir dist/test
 
 node_modules: package.json
 	@NODE_ENV= $(NPM) install
@@ -64,7 +68,7 @@ docs/%:
 
 doc: $(addprefix docs/, $(notdir $(JS_FILES)))
 
-build-doc:
+commit-doc:
 	clear
 	rm -rf docs/*
 	make doc
@@ -76,4 +80,14 @@ commit-dist: clean standalone babelify
 	git add dist/ -v
 	git commit -m "re-build dist/"
 
-.PHONY: standalone install clean distclean doc commit-dist
+# testing client app
+test-app:
+	cp test/fixture.json dist/test/
+	cp test/config.json dist/test/
+	cp ./node_modules/mocha/mocha.* ./app
+	cat \
+		dist/test/test.wpcom.me.js \
+		> dist/test/testing-source.js
+	@$(WEBPACK) -p --config app/webpack.config.js
+
+.PHONY: standalone install clean distclean doc commit-dist test-app

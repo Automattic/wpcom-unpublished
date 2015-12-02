@@ -5,3 +5,4 @@ npm-debug.log
 dist/test
 test/fixture.json
 tmp/
+app/testing-bundle*
