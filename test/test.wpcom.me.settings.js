@@ -1,7 +1,7 @@
 /**
  * Module dependencies
  */
-var ProfileLinks = require( '../lib/me.settings.profile-links' );
+var ProfileLinks = require( 'wpcom/dist/lib/me.settings.profile-links' );
 var util = require( './util' );
 var assert = require( 'assert' );
 
