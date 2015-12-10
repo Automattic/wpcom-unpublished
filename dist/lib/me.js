@@ -4,7 +4,6 @@
  */
 
 var _Me_ = require('wpcom/dist/lib/me');
-var MeSettings = require('./me.settings');
 var inherits = require('inherits');
 
 /**
@@ -40,26 +39,6 @@ function Me(wpcom) {
 inherits(Me, _Me_);
 
 /**
- * Get user billing history.
- *
- * *Example:*
- *    // Get billing history for the current user
- *    wpcom
- *    .me()
- *    .billingHistory( function( err, data ) {
- *      // billing history data object
- *    } );
- *
- * @param {Object} [query] - query object parameter
- * @param {Function} [fn]
- * @public
- */
-
-Me.prototype.billingHistory = function (query, fn) {
-  return this.wpcom.req.get('/me/billing-history', query, fn);
-};
-
-/**
  * Posts from the sites that a user belongs to
  *
  * *Example:*
@@ -77,20 +56,6 @@ Me.prototype.billingHistory = function (query, fn) {
 
 Me.prototype.postsList = function (query, fn) {
   return this.wpcom.req.get('/me/posts', query, fn);
-};
-
-/**
- * Return a `MeSettings` instance.
- *
- * *Example:*
- *    // Create a MeSettings instance
- *    var settings = wpcom.me().settings();
- *
- * @public
- */
-
-Me.prototype.settings = function () {
-  return new MeSettings(this.wpcom);
 };
 
 /*!
