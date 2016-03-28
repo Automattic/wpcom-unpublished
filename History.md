@@ -1,3 +1,8 @@
+1.1.0 / 2016-03-28
+==================
+
+ * update to wpcom@4.9.0 (see https://github.com/Automattic/wpcom.js/pull/164
+   and https://github.com/Automattic/wpcom-xhr-request/pull/17)
 
 1.0.10 / 2016-2-23
 ==================
