@@ -1,7 +1,7 @@
 {
   "name": "wpcom-unpublished",
   "description": "WPCOM extension for unpublished endpoints of the WordPress REST-API",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "author": "Automattic, Inc.",
   "contributors": [
@@ -21,7 +21,7 @@
     "debug": "~2.2.0",
     "inherits": "2.0.1",
     "qs": "^4.0.0",
-    "wpcom": "4.8.5"
+    "wpcom": "4.9.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
