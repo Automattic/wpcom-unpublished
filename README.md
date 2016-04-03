@@ -1,3 +1,6 @@
+##WARN: This library is deprecated. Use [wpcom.js](https://github.com/Automattic/wpcom.js).
+
+
 wpcom-unpublished
 =================
 
